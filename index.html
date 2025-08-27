@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Myy Lovee</title>
+
+  <!-- Fonts: Elegant serif/script + clean sans-serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas for subtle sparkle/petal trail -->
+  <canvas id="cursorTrail" aria-hidden="true"></canvas>
+
+  <!-- Floating hearts container -->
+  <div id="floatingHearts" aria-hidden="true"></div>
+
+  <!-- Sticky heart trigger (spawns heart shower) -->
+  <button class="heart-trigger" aria-label="Send hearts" title="Send hearts">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.29 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41.99 4.5 2.44C12.09 4.99 13.76 4 15.5 4 18 4 20 6 20 8.5c0 3.79-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  </button>
+
+  <!-- Header/Hero -->
+  <header class="hero section" id="hero" data-animate>
+    <div class="hero-media">
+      <!-- Replace with actual portrait: larger than 1600px recommended -->
+      <img class="hero-photo" src="/Snapchat-189861354.jpg" alt="[Her Name] smiling" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Happy Birthday, <span class="hero-name">Myy Lovee</span>
+      </h1>
+      <p class="hero-subtitle">Today is all about your light, your laughter, and your beautiful heart.</p>
+      <div class="hero-scroll">
+        <span class="scroll-dot" aria-hidden="true"></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Personal Letter -->
+    <section class="letter section container" id="letter" data-animate>
+      <h2 class="section-title">A Letter From My Heart</h2>
+      <article class="letter-card soft-surface">
+        <p class="lead">My dearest sweetaa,</p>
+        <p>
+          Another year around the sun, and somehow you shine even brighter. Thank you
+          for turning ordinary moments into memories and quiet days into warmth. Your
+          kindness inspires me, your laugh steadies me, and your love makes every day
+          feel like home.
+        </p>
+        <p>
+          I love the way you find magic in small things, how you care deeply, and how
+          your eyes light up when you talk about your dreams. I promise to keep showing
+          up for you—softly, honestly, and always.
+        </p>
+        <p>
+          Today is your day. May it be soft, golden, and full of every little thing you love.
+        </p>
+        <p class="closing">With all my love,<br />pgl</p>
+      </article>
+    </section>
+
+    <!-- Our Moments Gallery (polaroid grid) -->
+    <section class="gallery section container" id="gallery" data-animate>
+      <h2 class="section-title">Our Moments</h2>
+      <div class="polaroid-grid">
+        <!-- Repeat these items; replace src and captions -->
+        <figure class="polaroid" tabindex="0" aria-label="Our first sunset together">
+          <img src="/Snapchat-1235732159.jpg" alt="Sunset by the sea" />
+          <figcaption>Our first Adventure 💗</figcaption>
+        </figure>
+        <figure class="polaroid" tabindex="0" aria-label="Laughing until we cried">
+          <img src="/Snapchat-1235318660.jpg" alt="Couple laughing" />
+          <figcaption> Myy Godddesssssssss ✨✨</figcaption></figcaption>
+        </figure>
+        <figure class="polaroid" tabindex="0" aria-label="Fist Movie Date">
+          <img src="/IMG_20250827_17182270.jpeg" alt="Coffee c" />
+          <figcaption>Our First movie datee 🍿</figcaption>
+        </figure>
+        <figure class="polaroid" tabindex="0" aria-label="That little bookstore">
+          <img src="/Snapchat-1870771598.jpg" alt="Cozy bookstore aisle" />
+          <figcaption>That little bookstore 💓</figcaption>
+        </figure>
+        <figure class="polaroid" tabindex="0" aria-label="Midnight dancing in the kitchen">
+          <img src="/Snapchat-650194320.jpg" alt="Cozy kitchen lights" />
+          <figcaption>Myy First heavenlyyyy burgerrr 🍔</figcaption>
+        </figure>
+        <figure class="polaroid" tabindex="0" aria-label="That perfect road trip">
+          <img src="/Snapchat-1189992627.jpg" alt="Road trip view" />
+          <figcaption>That perfect road trip 🚲</figcaption>
+        </figure>
+      </div>
+      <p class="hint">Hover or focus to reveal the memory.</p>
+    </section>
+
+    <!-- Reasons I Love You -->
+    <section class="reasons section container" id="reasons" data-animate>
+      <h2 class="section-title">Reasons I Love You</h2>
+      <ol id="reasonsList" class="reasons-list soft-surface" aria-live="polite">
+        <!-- JS reveals items progressively -->
+      </ol>
+      <button id="showNextReason" class="btn btn-primary" type="button" aria-controls="reasonsList">
+        Show another reason
+      </button>
+    </section>
+
+    <!-- Our Song -->
+    <section class="song section container" id="song" data-animate>
+      <h2 class="section-title">The Song that always reminds me of u, My Love</h2>
+
+      <!-- Minimal embedded player: replace with your Spotify or SoundCloud link -->
+      <div class="player-embed soft-surface" role="region" aria-label="Embedded music player">
+        <!-- Example Spotify embed (replace the src with your track/playlist/album) -->
+        <!-- Spotify: https://open.spotify.com/embed/track/{id} -->
+        <iframe
+          class="player-frame"
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/5KNuHsIeFtD0oukst77hBi?utm_source=generator"
+          width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Spotify player"></iframe>
+
+        <!-- Or SoundCloud example (commented):
+        <iframe class="player-frame" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456&color=%23ffd2dc&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
+        -->
+      </div>
+      <p class="hint">Press to playy.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with <span class="inline-heart">♥</span> for you — always.</p>
+  </footer>
+
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>
